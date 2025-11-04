@@ -1,0 +1,2438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lauren Sisco </title>
+    <meta name="description" content="Lauren Sisco - Accounting and Finance student at University of Minnesota Duluth. Explore my hobbies, experiences, and career interests.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2d3436;
+            --accent-color: #0066ff;
+            --secondary-color: #4a86e8;
+            --text-color: #2d3436;
+            --background-color: #f5f6fa;
+            --card-background: #ffffff;
+            --transition-speed: 0.3s;
+            --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --gradient-primary: linear-gradient(135deg, #0c65ec, #4a86e8);
+            --gradient-secondary: linear-gradient(135deg, #667eea, #1d53e8);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+            transition: background-color var(--transition-speed), color var(--transition-speed);
+        }
+
+        /* Dark Theme */
+        body.dark-theme {
+            --primary-color: #e0e0e0;
+            --text-color: #e0e0e0;
+            --background-color: #1a1a1a;
+            --card-background: #2d2d2d;
+            --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        body.dark-theme .nav-container {
+            background: rgba(45, 45, 45, 0.95);
+        }
+
+        body.dark-theme .hero {
+            background: linear-gradient(135deg, #0d47a1 0%, #1565c0 25%, #1976d2 50%, #2196f3 75%, #42a5f5 100%);
+        }
+
+        body.dark-theme .timeline-marker {
+            border-color: var(--card-background);
+        }
+
+        body.dark-theme .form-input {
+            background: #1a1a1a;
+            border-color: #444;
+            color: #e0e0e0;
+        }
+
+        body.dark-theme .form-label {
+            background: var(--card-background);
+        }
+
+        /* Navigation */
+        .nav-container {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: 2px solid var(--accent-color);
+            color: var(--accent-color);
+            padding: 0.5rem;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all var(--transition-speed);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .theme-toggle:hover {
+            background: var(--accent-color);
+            color: white;
+            transform: scale(1.1);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #1976d2 0%, #1565c0 25%, #0d47a1 50%, #0a3d91 75%, #1a237e 100%);
+            color: white;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="60" height="60" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h60v60H0z" fill="none"/><path d="M30 30l15-15M30 30l-15 15M30 30l15 15M30 30l-15-15" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            max-width: 1200px;
+            width: 100%;
+            z-index: 1;
+            align-items: center;
+        }
+
+        .hero-text {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .highlight {
+            color: #ffffff;
+            font-weight: 800;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all var(--transition-speed);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--accent-color);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--accent-color);
+            transform: translateY(-2px);
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards 0.4s;
+        }
+
+        .profile-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-avatar {
+            width: 120px;
+            height: 120px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            overflow: hidden;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .profile-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .profile-info p {
+            opacity: 0.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .profile-stats {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 2rem;
+            animation: bounce 2s infinite;
+            cursor: pointer;
+        }
+
+        /* Welcome Video Section */
+        .welcome-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            padding: 4rem 2rem;
+            margin: 2rem 0;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .welcome-slideshow {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .slide {
+            display: none;
+            position: relative;
+            height: 400px;
+            background-size: cover;
+            background-position: center;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .slide.active {
+            display: block;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .slide-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .slide-text {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        }
+
+        .slide-indicators {
+            position: absolute;
+            bottom: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .indicator.active {
+            background: white;
+        }
+
+        .welcome-controls {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.5);
+            color: white;
+            border: none;
+            padding: 1rem;
+            cursor: pointer;
+            font-size: 1.5rem;
+            transition: background 0.3s ease;
+        }
+
+        .welcome-controls:hover {
+            background: rgba(0,0,0,0.7);
+        }
+
+        .prev-btn {
+            left: 1rem;
+        }
+
+        .next-btn {
+            right: 1rem;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @media (max-width: 768px) {
+            .slide {
+                height: 300px;
+            }
+            
+            .slide-text {
+                font-size: 1rem;
+                padding: 1rem;
+            }
+            
+            .welcome-controls {
+                padding: 0.5rem;
+                font-size: 1.2rem;
+            }
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 6rem 2rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--gradient-primary);
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* About Section */
+        .about {
+            background: var(--card-background);
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .about-interests {
+            margin-top: 3rem;
+        }
+
+        .interests-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .interest-card {
+            background: var(--card-background);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: var(--card-shadow);
+            transition: transform var(--transition-speed);
+            text-align: center;
+        }
+
+        .interest-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .interest-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .interest-image, .interest-images {
+            margin: 1.5rem 0;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .interest-photo {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: all var(--transition-speed);
+            filter: brightness(1.05) contrast(1.1) saturate(1.15);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .interest-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .interest-photo:hover {
+            transform: scale(1.08) translateY(-5px);
+            filter: brightness(1.1) contrast(1.15) saturate(1.2);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .about-intro {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-color);
+            line-height: 1.7;
+            text-indent: 2rem;
+        }
+
+        .about-highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .highlight-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: var(--background-color);
+            border-radius: 15px;
+            transition: transform var(--transition-speed);
+        }
+
+        .highlight-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .highlight-item i {
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-top: 0.5rem;
+        }
+
+        .highlight-item h4 {
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .highlight-item p {
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* Hobbies Section */
+        .hobbies {
+            background: var(--background-color);
+        }
+
+        .hobbies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .hobby-card {
+            background: var(--card-background);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: var(--card-shadow);
+            transition: transform var(--transition-speed);
+            text-align: center;
+        }
+
+        .hobby-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .hobby-icon {
+            font-size: 3rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        .hobby-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .hobby-description {
+            color: #666;
+            line-height: 1.6;
+            text-align: justify;
+            padding: 0 1rem;
+            width: 100%;
+            margin-top: 1rem;
+            hyphens: auto;
+            word-break: normal;
+        }
+
+        /* Stories/Experiences Section */
+        .stories-section, .importance-section {
+            margin-top: 4rem;
+            padding: 2rem;
+            background: var(--card-background);
+            border-radius: 15px;
+            box-shadow: var(--card-shadow);
+        }
+
+        .story-card {
+            padding: 1.5rem;
+            background: var(--background-color);
+            border-radius: 10px;
+            margin-top: 1.5rem;
+        }
+
+        .story-text {
+            color: var(--text-color);
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        .importance-list {
+            margin-top: 1.5rem;
+            padding: 1.5rem;
+            background: var(--background-color);
+            border-radius: 10px;
+        }
+
+        .importance-list ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .importance-list li {
+            margin-bottom: 1rem;
+            color: var(--text-color);
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+
+        .section-subtitle {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .hobby-image, .hobby-images {
+            margin: 1.5rem 0;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .hobby-photo {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: all var(--transition-speed);
+            filter: brightness(1.05) contrast(1.1) saturate(1.15);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .hobby-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .hobby-photo:hover {
+            transform: scale(1.08) translateY(-5px);
+            filter: brightness(1.1) contrast(1.15) saturate(1.2);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Discover Section */
+        .discover {
+            background: var(--background-color);
+        }
+
+        /* Resume Section */
+        .resume-section {
+            background: var(--card-background);
+        }
+
+        .resume-container {
+            background: var(--card-background);
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: var(--card-shadow);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .resume-header {
+            text-align: center;
+            padding-bottom: 2rem;
+            border-bottom: 3px solid var(--accent-color);
+            margin-bottom: 2rem;
+        }
+
+        .resume-header h1 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .resume-header .resume-subtitle {
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .resume-contact {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            color: #666;
+        }
+
+        .resume-section-block {
+            margin-bottom: 2.5rem;
+        }
+
+        .resume-section-title {
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent-color);
+        }
+
+        .resume-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .resume-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .resume-item-title {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            margin: 0;
+        }
+
+        .resume-item-date {
+            color: #666;
+            font-style: italic;
+        }
+
+        .resume-item-subtitle {
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .resume-skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .download-btn {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .btn-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: var(--accent-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .btn-download:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            background: var(--secondary-color);
+        }
+
+        @media (max-width: 768px) {
+            .resume-container {
+                padding: 2rem 1.5rem;
+            }
+
+            .resume-header h1 {
+                font-size: 2rem;
+            }
+
+            .resume-contact {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .resume-item-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        .discover-card {
+            background: var(--card-background);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--card-shadow);
+            transition: transform var(--transition-speed);
+        }
+
+        .discover-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .discover-title {
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .discover-content {
+            padding: 1rem;
+            background: var(--background-color);
+            border-radius: 10px;
+        }
+
+        .discover-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .discover-list li {
+            margin-bottom: 1rem;
+            color: var(--text-color);
+            line-height: 1.6;
+            font-size: 1.1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .discover-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .discover-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform var(--transition-speed);
+            filter: brightness(1.05) contrast(1.1) saturate(1.15);
+        }
+
+        .discover-image:hover {
+            transform: scale(1.02);
+            filter: brightness(1.1) contrast(1.15) saturate(1.2);
+        }
+
+        /* Education Section */
+        .education {
+            background: var(--card-background);
+        }
+
+        .education-timeline {
+            position: relative;
+            margin-top: 3rem;
+        }
+
+        .education-timeline::before {
+            content: '';
+            position: absolute;
+            left: 2rem;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--accent-color);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            padding-left: 5rem;
+        }
+
+        .timeline-marker {
+            position: absolute;
+            left: 1.5rem;
+            top: 0.5rem;
+            width: 1rem;
+            height: 1rem;
+            background: var(--accent-color);
+            border-radius: 50%;
+            border: 3px solid var(--card-background);
+            z-index: 1;
+        }
+
+        .timeline-content {
+            background: var(--background-color);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--card-shadow);
+            transition: transform var(--transition-speed);
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+        }
+
+        .timeline-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content h4 {
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .timeline-date {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .achievements {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .achievement {
+            background: var(--accent-color);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        /* Career Interests Section */
+        .career {
+            background: var(--background-color);
+        }
+
+        .companies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .company-card {
+            background: var(--card-background);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: var(--card-shadow);
+            transition: transform var(--transition-speed);
+            position: relative;
+            /* provide extra top padding so the absolute-positioned logo doesn't overlap the heading */
+            padding-top: 3rem;
+            overflow: hidden;
+        }
+
+        .company-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .company-name {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .company-details {
+            margin-bottom: 1.5rem;
+        }
+
+        .company-details h4 {
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .company-details p {
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-info {
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            color: var(--primary-color);
+            padding: 1rem;
+            border-radius: 10px;
+            margin-top: 1rem;
+            border: 1px solid #90caf9;
+        }
+
+        /* Company logo placed top-right inside a company-card */
+        .company-logo {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 100px;
+            height: auto;
+            object-fit: contain;
+            opacity: 0.95;
+            padding: 4px;
+            pointer-events: none;
+        }
+
+        @media (max-width: 768px) {
+            .company-logo {
+                width: 80px;
+                top: 10px;
+                right: 10px;
+            }
+        }
+
+        /* Interactive Game Section */
+        .game-section {
+            background: var(--card-background);
+            text-align: center;
+            position: relative;
+        }
+
+        .game-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .game-iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+            border-radius: 15px;
+            box-shadow: var(--card-shadow);
+        }
+
+        .game-music-control {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .game-music-control:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1);
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--background-color);
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 3rem;
+        }
+
+        .contact-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .contact-info p {
+            color: #666;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .contact-methods {
+            margin-bottom: 2rem;
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: var(--card-background);
+            border-radius: 10px;
+            transition: transform var(--transition-speed);
+        }
+
+        .contact-method:hover {
+            transform: translateX(5px);
+        }
+
+        .contact-method i {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            width: 30px;
+        }
+
+        .contact-method h4 {
+            margin-bottom: 0.25rem;
+            color: var(--primary-color);
+        }
+
+        .contact-method p {
+            color: #666;
+            margin: 0;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: var(--accent-color);
+            color: white;
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: all var(--transition-speed);
+        }
+
+        .social-link:hover {
+            background: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
+        .contact-form {
+            background: var(--card-background);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--card-shadow);
+        }
+
+        .form-group {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            background: var(--background-color);
+            color: var(--text-color);
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        .form-input:focus {
+            border-color: var(--accent-color);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(0, 171, 68, 0.1);
+        }
+
+        .form-label {
+            position: absolute;
+            left: 1rem;
+            top: 1rem;
+            background: var(--card-background);
+            padding: 0 0.5rem;
+            color: #666;
+            transition: all 0.3s ease;
+            pointer-events: none;
+        }
+
+        .form-input:focus + .form-label,
+        .form-input:not(:placeholder-shown) + .form-label {
+            transform: translateY(-1.5rem) scale(0.8);
+            color: var(--accent-color);
+        }
+
+        .submit-btn {
+            padding: 1rem 2rem;
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--primary-color);
+            color: white;
+            padding: 3rem 2rem 1rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3,
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .footer-section p {
+            color: #ccc;
+            line-height: 1.6;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color var(--transition-speed);
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .footer-social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: all var(--transition-speed);
+        }
+
+        .footer-social-link:hover {
+            background: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #444;
+            padding-top: 1rem;
+            text-align: center;
+            color: #ccc;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.25rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .companies-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-highlights {
+                grid-template-columns: 1fr;
+            }
+            
+            .education-timeline::before {
+                left: 1rem;
+            }
+            
+            .timeline-item {
+                padding-left: 3rem;
+            }
+            
+            .timeline-marker {
+                left: 0.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+            }
+            
+            .profile-stats {
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .btn {
+                padding: 0.75rem 1.5rem;
+                font-size: 0.9rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <div class="navbar">
+            <a href="#" class="logo">Lauren Sisco</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#hobbies">Hobbies</a></li>
+                <li><a href="#discover">Discover</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#career">Career</a></li>
+                <li><a href="#game">Game</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">Hi, I'm <span class="highlight">Lauren Sisco</span></h1>
+                <p class="hero-subtitle">Accounting & Finance Student at UMD</p>
+                <p class="hero-description">
+                    I'm a student at the University of Minnesota Duluth pursuing dual majors in Accounting and Finance with a minor in Economics. 
+                    I love creating, exploring, and making meaningful connections through my diverse interests and experiences.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#about" class="btn btn-primary">
+                        <i class="fas fa-user"></i>
+                        Learn More
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <i class="fas fa-envelope"></i>
+                        Get In Touch
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="profile-card">
+                    <div class="profile-avatar">
+                        <img src="Head Shot - Personal Website .jpg" alt="Lauren Sisco Head Shot" title="Lauren Sisco">
+                    </div>
+                    <div class="profile-info">
+                        <h3>Lauren Sisco</h3>
+                        <p>Accounting & Finance Student</p>
+                        <div class="profile-stats">
+                            <div class="stat">
+                                <span class="stat-number">19</span>
+                                <span class="stat-label">Years Old</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">UMD</span>
+                                <span class="stat-label">University</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator" onclick="scrollToSection('about')" role="button" aria-label="Scroll to about section" tabindex="0">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Welcome Video Section -->
+    <section class="welcome-section">
+        <div class="container">
+            <div class="welcome-Video" id="welcomeVideo">
+                <video controls>
+                    <source src="videos/Intro Video .mp4" type="video/mp4">
+                    <source src="videos/Intro Video (Other) .webm" type="video/webm">
+                </video> 
+            </div>
+        </div>
+    </section>   
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <p class="section-subtitle">Get to know me better</p>
+            
+            <div class="about-content">
+                <p class="about-intro">
+                    Hello everyone! I'm Lauren Sisco, a dedicated student who graduated high school in 2024 and started at the University of Minnesota Duluth that summer. 
+                    I graduated with a technical diploma in "Financial Service Customer Representative" from Northwood Technical College, 
+                    and have certificates in Word, Excel, and PowerPoint. I'm passionate about learning and growing both academically and personally.
+                </p>
+                
+                <div class="about-highlights">
+                    <div class="highlight-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <div>
+                            <h4>Academic Excellence</h4>
+                            <p>Maintained Dean's List status throughout my college career and graduated with Highest Honors from high school.</p>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-certificate"></i>
+                        <div>
+                            <h4>Professional Certifications</h4>
+                            <p>Certified in Microsoft Word, Excel, and PowerPoint with a technical diploma in Financial Services.</p>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-heart"></i>
+                        <div>
+                            <h4>Passionate Creator</h4>
+                            <p>I love making things for others - from handmade crafts to delicious meals, sharing joy through creativity.</p>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-mountain"></i>
+                        <div>
+                            <h4>Nature Enthusiast</h4>
+                            <p>I find peace and inspiration in the outdoors, whether it's hiking, snowmobiling, or simply enjoying nature's beauty.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-interests">
+                    <h3 class="subsection-title">Personal Interests</h3>
+                    <div class="interests-grid">
+                        <div class="interest-card">
+                            <div class="interest-icon">❄️</div>
+                            <h4>Snowmobiling</h4>
+                            <div class="interest-image">
+                                <img src="images/Snowmobiling.jpg" alt="Snowmobiling" class="interest-photo">
+                            </div>
+                            <p>
+                                I've been snowmobiling since I was 8-9 years old and got my license at 12. I love the snow, driving, 
+                                and making memories with my family. It's the perfect mix of adventure and family bonding.
+                            </p>
+                        </div>
+                        
+                        <div class="interest-card">
+                            <div class="interest-icon">🧶</div>
+                            <h4>Textile Arts</h4>
+                            <div class="interest-images">
+                                <img src="images/Knitting.webp" alt="Knitting" class="interest-photo">
+                                <img src="images/Crocheting.jpg" alt="Crocheting" class="interest-photo">
+                            </div>
+                            <p>
+                                I enjoy sewing, knitting, crocheting, etc. I've made blankets, quilts, pillow cases, scarves, and more. 
+                                Including baby blankets for my hometown hospital for the new mothers, and quilts for people overseas. 
+                                I love creating thoughtful gifts for people I care about.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hobbies Section -->
+    <section id="hobbies" class="section hobbies">
+        <div class="container">
+            <h2 class="section-title">My Hobbies & Interests</h2>
+            <p class="section-subtitle">The activities that bring joy to my life</p>
+            
+            <div class="hobbies-grid">
+                
+                <div class="hobby-card">
+                    <div class="hobby-icon">👨‍🍳</div>
+                    <h3 class="hobby-title">Cooking & Baking</h3>
+                    <div class="hobby-images">
+                        <img src="images/Cooking.jpg" alt="Cooking" class="hobby-photo">
+                        <img src="images/Baking.jpg" alt="Baking" class="hobby-photo">
+                    </div>
+                    <p class="hobby-description">
+                        I enjoy sharing my creations with others and making things for people when the opportunity presents itself. I also enjoy eating in general and trying new things. I have been cooking/baking for as long as I can remember, and I've always enjoyed trying new kinds of food, either from different cultures, things I wouldn't have ever thought of, or mixing random things together that I think would go well with one another. Experimenting in the kitchen is fun, interesting, and usually gives you a delicious final product to add to your recipe box.
+                    </p>
+                </div>
+                
+                <div class="hobby-card">
+                    <div class="hobby-icon">🚗</div>
+                    <h3 class="hobby-title">Night Driving</h3>
+                    <div class="hobby-image">
+                        <img src="images/Driving.jpg" alt="Night driving" class="hobby-photo">
+                    </div>
+                    <p class="hobby-description">
+One of my favorite activities is driving at night, so it’s dark, and listening to music. It’s calming and makes one feel like they’re the only person left on the planet, and for me that is fun to experience. If I ever need a time to not stress about anything or have to think about anything else, this is the time to focus on nothing besides the road ahead and the music surrounding me. 
+                    </p>
+                </div>
+                
+                <div class="hobby-card">
+                    <div class="hobby-icon">🎨</div>
+                    <h3 class="hobby-title">Arts & Crafts</h3>
+                    <div class="hobby-image">
+                        <img src="images/Crafting.jpg" alt="Arts and crafts" class="hobby-photo">
+                    </div>
+                    <p class="hobby-description">
+I’m fond of many different types of arts, like pencil/shading work, wood working, sewing, knitting, crocheting, and more. I use this skill to either make things for myself or other people. I have made things for family, friends, myself, companies, to be shipped overseas, etc. I usually try to make something for the people I care about on their birthdays or for Christmas. I like the more personal feel to that portion of their presents, picking the color, style, texture, design, use, etc. while thinking of them to make it as unique and thoughtful to them as I can. 
+                    </p>
+                </div>
+                
+                <div class="hobby-card">
+                    <div class="hobby-icon">🎬</div>
+                    <h3 class="hobby-title">DVD Collection</h3>
+                    <div class="hobby-image">
+                        <img src="images/DVDs.jpg" alt="DVD Collection" class="hobby-photo">
+                    </div>
+                    <p class="hobby-description">
+I love to rewatch old movie series, especially when they are on DVD. I collect them and don’t see myself stopping that tradition anytime soon. If whatever source I’m trying to watch something on isn’t carrying the movie(s) at the time, then it doesn’t hinder my watching because I have them ready to go at any time. If I don’t know what to watch then I just pick something that sounds good to me from my collection, and I never have to worry about getting bored of them because my series either have 5-8 movies in them to take up a longer time period, or I have enough to search through that no matter what mood I’m in, I can find a movie to watch or put on in the background. My great aunt and uncle like DVDs too, so when I spend time with them I either get to show them a new movie they haven’t seen or they play one I haven’t seen; we also rewatch stuff together and DVDs are a good way to spend time with one another. 
+                    </p>
+                </div>
+
+                <!-- Stories/Experiences Section -->
+                <div class="stories-section">
+                    <h3 class="section-subtitle">Stories/Experiences</h3>
+                    <div class="hobby-images" style="margin: 1.5rem 0;">
+                        <img src="images/MarryMeChicken.jpg" alt="Marry Me Chicken dish" class="hobby-photo">
+                        <img src="images/PeachCobbler.jpg" alt="Peach Cobbler dessert" class="hobby-photo">
+                    </div>
+                    <div class="story-card">
+                        <p class="story-text">
+                            There was one particular summer during high school that my aunt and uncle had to leave town for about a week, so I stayed with my aunt's mother and their dog to take care of them both. I love animals, and I enjoyed my great aunt's company - she was 98 years old at the time and had a lot of great stories and life experience to share. She was totally self-sufficient, I just cooked and baked for her and played Harry Potter DVDs - an experience mixing multiple favorite activities of mine.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Importance Section -->
+                <div class="importance-section">
+                    <h3 class="section-subtitle">Importance of These Activities:</h3>
+                    <div class="importance-list">
+                        <ul>
+                            <li>➢ Bonding/Connection - Sharing</li>
+                            <li>➢ Me time/personal pleasure</li>
+                            <li>➢ Presents: I like to make things for the people I care about</li>
+                            <li>➢ Entertainment/interest</li>
+                            <li>➢ Knowledge: I like learning new things and seeing/doing new experiences</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Discover Section -->
+    <section id="discover" class="section discover">
+        <div class="container">
+            <h2 class="section-title">Discover</h2>
+            <p class="section-subtitle">My Journey at UMD and Duluth Experience</p>
+
+            <!-- Why UMD Section -->
+            <div class="discover-card">
+                <h3 class="discover-title">Why I Chose The University of Minnesota Duluth (UMD):</h3>
+                <img src="images/UMD.jpg" alt="University of Minnesota Duluth Campus" class="discover-image">
+                <div class="discover-content">
+                    <ul class="discover-list">
+                        <li>➢ Location: A few hours from my house so I can get home without too much effort but I have some distance still.</li>
+                        <li>➢ Living situation: I wanted to be in an apartment the first year, but many universities don't allow that - unlike UMD.</li>
+                        <li>➢ Weather: I wanted to stay somewhere with snow/cooler weather, and the fall is beautiful here.</li>
+                        <li>➢ Building: I enjoy the fact that the campus is one large building; it's helpful not needing to identify multiple different buildings, and when it's really cold/hot out then you don't need to worry about the weather every hour walking from building to building.</li>
+                        <li>➢ Size: I'm a fan of the medium sized campus, it's not too small so I have more opportunities, but not too big because I don't enjoy people very much.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- What I Enjoy Section -->
+            <div class="discover-card">
+                <h3 class="discover-title">What I Enjoy From Duluth/The Area:</h3>
+                <img src="images/Bridge.jpg" alt="Duluth Aerial Lift Bridge" class="discover-image">
+                <div class="discover-content">
+                    <ul class="discover-list">
+                        <li>➢ Seasons/Weather: I enjoy the cold more than heat, and Duluth is the perfect mix for me. I also enjoy the beautiful range of colors in the fall.</li>
+                        <li>➢ Activities: There are many events in the area to attend, as well as many outdoor activities to participate in.</li>
+                        <li>➢ Familiarity: I only live a few hours away from here so I've been to this location multiple times already.</li>
+                        <li>➢ Diversity: There are many different people and cultures here. I live in a small town that's very strict and "my why or no why" mind set oriented, so it was nice to experience something different and less judgment for people being themselves.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Personal Experiences Section -->
+            <div class="discover-card">
+                <h3 class="discover-title">Personal Experiences/Campus Highlights:</h3>
+                <img src="images/Library.jpg" alt="UMD Library Reading Room" class="discover-image">
+                <div class="discover-content">
+                    <ul class="discover-list">
+                        <li>➢ Relationships: I have made and kept good friends here at UMD.</li>
+                        <li>➢ Proud Experiences: I have remained on the Dean's List for the duration of my college experience, which is something I'm proud of and strive to continue achieving.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume" class="section resume-section">
+        <div class="container">
+            <h2 class="section-title">Professional Resume</h2>
+            <p class="section-subtitle">Download or view my professional background</p>
+            
+            <!-- Download Button -->
+            <div class="download-btn">
+                <a href="Resume/Resume.pdf" download="Lauren_Sisco_Resume.pdf" class="btn-download">
+                    <i class="fas fa-download"></i>
+                    Download PDF Resume
+                </a>
+            </div>
+
+            <!-- Resume Content -->
+            <div class="resume-container">
+                
+                <!-- Header -->
+                <div class="resume-header">
+                    <h1>Lauren Sisco</h1>
+                    <p class="resume-subtitle">Accounting & Finance Student</p>
+                    <div class="resume-contact">
+                        <span><i class="fas fa-envelope" style="color: var(--accent-color); margin-right: 0.5rem;"></i>sisco021@d.umn.edu</span>
+                        <span><i class="fas fa-map-marker-alt" style="color: var(--accent-color); margin-right: 0.5rem;"></i>Duluth, Minnesota</span>
+                        <span><i class="fas fa-university" style="color: var(--accent-color); margin-right: 0.5rem;"></i>University of Minnesota Duluth</span>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div class="resume-section-block">
+                    <h3 class="resume-section-title">
+                        <i class="fas fa-graduation-cap" style="margin-right: 0.5rem;"></i>Education
+                    </h3>
+                    
+                    <div class="resume-item">
+                        <div class="resume-item-header">
+                            <h4 class="resume-item-title">University of Minnesota Duluth</h4>
+                            <span class="resume-item-date">2024 - Present</span>
+                        </div>
+                        <p class="resume-item-subtitle">Bachelor's Degree - Dual Major in Accounting & Finance</p>
+                        <p style="color: #666; margin-bottom: 0.5rem;">Minor: Economics</p>
+                        <ul style="list-style: none; padding: 0; margin-top: 0.5rem;">
+                            <li style="padding: 0.25rem 0; color: var(--text-color);"><i class="fas fa-star" style="color: #FFD700; margin-right: 0.5rem;"></i>Dean's List - All Semesters</li>
+                            <li style="padding: 0.25rem 0; color: var(--text-color);"><i class="fas fa-certificate" style="color: var(--accent-color); margin-right: 0.5rem;"></i>Microsoft Office Certifications: Word, Excel, PowerPoint</li>
+                        </ul>
+                    </div>
+
+                    <div class="resume-item">
+                        <div class="resume-item-header">
+                            <h4 class="resume-item-title">Northwood Technical College</h4>
+                            <span class="resume-item-date">2024</span>
+                        </div>
+                        <p class="resume-item-subtitle">Technical Diploma - Financial Service Customer Representative</p>
+                        <p style="color: #666;">Graduated with technical diploma prior to high school completion</p>
+                    </div>
+
+                    <div class="resume-item">
+                        <div class="resume-item-header">
+                            <h4 class="resume-item-title">High School</h4>
+                            <span class="resume-item-date">2024</span>
+                        </div>
+                        <p class="resume-item-subtitle">Graduated with Highest Honors</p>
+                        <ul style="list-style: none; padding: 0; margin-top: 0.5rem;">
+                            <li style="padding: 0.25rem 0; color: var(--text-color);"><i class="fas fa-award" style="color: #FFD700; margin-right: 0.5rem;"></i>Highest Honor Level Achievement</li>
+                            <li style="padding: 0.25rem 0; color: var(--text-color);"><i class="fas fa-trophy" style="color: var(--accent-color); margin-right: 0.5rem;"></i>Student of the Month</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Skills -->
+                <div class="resume-section-block">
+                    <h3 class="resume-section-title">
+                        <i class="fas fa-tools" style="margin-right: 0.5rem;"></i>Skills & Competencies
+                    </h3>
+                    
+                    <div class="resume-skills-grid">
+                        <div>
+                            <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">Technical Skills</h4>
+                            <ul style="list-style: none; padding: 0;">
+                                <li style="padding: 0.25rem 0; color: var(--text-color);"><i class="fas fa-check" style="color: #4CAF50; margin-right: 0.5rem;"></i>Microsoft Excel (Certified)</li>
+                                <li style="padding: 0.25rem 0; color: var(--text-color);"><i class="fas fa-check" style="color: #4CAF50; margin-right: 0.5rem;"></i>Microsoft Word (Certified)</li>
+                                <li style="padding: 0.25rem 0; color: var(--text-color);"><i class="fas fa-check" style="color: #4CAF50; margin-right: 0.5rem;"></i>Microsoft PowerPoint (Certified)</li>
+                                <li style="padding: 0.25rem 0; color: var(--text-color);"><i class="fas fa-check" style="color: #4CAF50; margin-right: 0.5rem;"></i>Financial Services Software</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">Professional Skills</h4>
+                            <ul style="list-style: none; padding: 0;">
+                                <li style="padding: 0.25rem 0; color: var(--text-color);"><i class="fas fa-check" style="color: #4CAF50; margin-right: 0.5rem;"></i>Financial Analysis</li>
+                                <li style="padding: 0.25rem 0; color: var(--text-color);"><i class="fas fa-check" style="color: #4CAF50; margin-right: 0.5rem;"></i>Customer Service</li>
+                                <li style="padding: 0.25rem 0; color: var(--text-color);"><i class="fas fa-check" style="color: #4CAF50; margin-right: 0.5rem;"></i>Attention to Detail</li>
+                                <li style="padding: 0.25rem 0; color: var(--text-color);"><i class="fas fa-check" style="color: #4CAF50; margin-right: 0.5rem;"></i>Time Management</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Career Interests -->
+                <div class="resume-section-block">
+                    <h3 class="resume-section-title">
+                        <i class="fas fa-briefcase" style="margin-right: 0.5rem;"></i>Career Interests
+                    </h3>
+                    
+                    <div style="margin-bottom: 1.5rem;">
+                        <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">Target Positions</h4>
+                        <ul style="padding-left: 1.5rem; color: var(--text-color);">
+                            <li style="margin-bottom: 0.5rem;">Accounting positions with opportunities for growth and professional development</li>
+                            <li style="margin-bottom: 0.5rem;">Finance-related roles in corporate or healthcare settings</li>
+                            <li style="margin-bottom: 0.5rem;">Payroll and financial operations roles with remote work flexibility</li>
+                            <li style="margin-bottom: 0.5rem;">Internship opportunities in accounting and finance</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">Organizations of Interest</h4>
+                        <ul style="padding-left: 1.5rem; color: var(--text-color);">
+                            <li style="margin-bottom: 0.5rem;"><strong>Essentia Health</strong> - Payroll and financial operations roles</li>
+                            <li style="margin-bottom: 0.5rem;"><strong>Anderson Hager & Moe</strong> - Accounting positions and internship opportunities</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Volunteer Experience -->
+                <div class="resume-section-block">
+                    <h3 class="resume-section-title">
+                        <i class="fas fa-hands-helping" style="margin-right: 0.5rem;"></i>Community Involvement
+                    </h3>
+                    
+                    <ul style="padding-left: 1.5rem; color: var(--text-color);">
+                        <li style="margin-bottom: 0.5rem;">Created baby blankets for hometown hospital new mothers program</li>
+                        <li style="margin-bottom: 0.5rem;">Crafted quilts for overseas charitable organizations</li>
+                        <li style="margin-bottom: 0.5rem;">Joined the Northwoods Humane Society to socialize and care for animals</li>
+                    </ul>
+                </div>
+
+                <!-- Additional Information -->
+                <div class="resume-section-block">
+                    <h3 class="resume-section-title">
+                        <i class="fas fa-info-circle" style="margin-right: 0.5rem;"></i>Additional Information
+                    </h3>
+                    
+                    <p style="color: var(--text-color); line-height: 1.8;">
+                    Passionate about learning and professional growth with a strong academic record. Experienced in creating meaningful connections and demonstrating attention to detail through various creative pursuits. Known for adaptability, dedication to excellence, and commitment to continuous improvement. Seeking opportunities to apply financial knowledge and analytical skills in a professional environment while contributing to organizational success.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section education">
+        <div class="container">
+            <h2 class="section-title">Education & Experience</h2>
+            <p class="section-subtitle">My academic journey and achievements</p>
+            
+            <div class="education-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>University of Minnesota Duluth</h3>
+                        <h4>Bachelor's Degree - Accounting & Finance</h4>
+                        <span class="timeline-date">2024 - Present</span>
+                        <p>Currently pursuing dual majors in Accounting and Finance with a minor in Economics. 
+                        I chose UMD for its location, medium-sized campus, single-building convenience, and beautiful weather.</p>
+                        <div class="achievements">
+                            <span class="achievement">Dean's List</span>
+                            <span class="achievement">Ongoing</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Northwood Technical College</h3>
+                        <h4>Technical Diploma - Financial Service Customer Representative</h4>
+                        <span class="timeline-date">2024</span>
+                        <p>Graduated with a technical diploma before completing high school, gaining valuable experience in financial services.</p>
+                        <div class="achievements">
+                            <span class="achievement">Technical Diploma</span>
+                            <span class="achievement">Word Certification</span>
+                            <span class="achievement">Excel Certification</span>
+                            <span class="achievement">PowerPoint Certification</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>High School</h3>
+                        <h4>Graduated with Highest Honors</h4>
+                        <span class="timeline-date">2024</span>
+                        <p>Graduated with the highest level of honors available, demonstrating academic excellence and commitment to learning.</p>
+                        <div class="achievements">
+                            <span class="achievement">Highest Honors</span>
+                            <span class="achievement">Student of the Month</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Career Interests Section -->
+    <section id="career" class="section career">
+        <div class="container">
+            <h2 class="section-title">Career Interests</h2>
+            <p class="section-subtitle">Companies and opportunities I'm excited about</p>
+            
+            <div class="companies-grid">
+                <div class="company-card">
+                    <img src="images/Essentia%20Health%20Logo.webp" alt="Essentia Health logo" class="company-logo">
+                    <h3 class="company-name">Essentia Health</h3>
+                    <div class="company-details">
+                        <h4>Interested Position: Payroll</h4>
+                            <p style="text-indent: 2em;">The open position for payroll is a career opportunity I could see myself pursuing. This is a job I could do from home, which is an aspect I'm interested in. It's also good experience for future job positions and valuable information no matter where I am.</p>
+                            <p style="text-indent: 2em;">Some of the core values here are quailty, justice, and teamwork (all things needed to be successful in this job position), as well as respect and joy (which are important to achieve a good workplace environment).</p>
+                        <div class="contact-info">
+                            <h4>Contact Information</h4>
+                            <p><strong>Corporate Headquarters:</strong> 218-786-8376</p>
+                            <p><strong>Hayward, WI Location:</strong> • 715-634-5505</p>
+                            <p style="text-indent: 11.39em;">• 11134 WI-77, Hayward, WI 54843</p>
+                            <p><strong>Duluth, MN Location:</strong> • 218-786-8364</p>
+                            <p style="text-indent: 10.57em;">• 400 E 3rd St, Duluth, MN 55805</p>
+                            <p><strong>Website Link:</strong><a href="https://www.essentiahealth.org/"</ahref></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="company-card">
+                    <img src="images/AH%26M%20Logo%20.jpeg" alt="Anderson Hager &amp; Moe logo" class="company-logo">
+                    <h3 class="company-name">Anderson Hager & Moe</h3>
+                    <div class="company-details">
+                        <h4>Interested Position: Accounting/Intern</h4>
+                        <p style="text-indent: 2em;">I am interested in their Accounting position and/or intern opportunity. The internship would help me grow and learn, and the job positions would give me experience that could be taken anywhere. I also live near these locations, so they would be an easy commute.</p>
+                        <p style="text-indent: 2em;">This companies culture is very personal, being a smaller chain, consisting of respect, excellence, professionalism, teamwork, and dedication.</p>
+                        <div class="contact-info">
+                            <h4>Contact Information</h4>
+                            <p><strong>Hayward, WI Location:</strong> • 715-634-2653</p>
+                            <p style="text-indent: 11.39em;">• 10425 WI-27, Hayward, WI 54854</p>
+                            <p><strong>Spooner, WI Location:</strong> • 715-635-8788</p>
+                            <p style="text-indent: 11em;">• 329 S River St, Spooner, WI 54801</p>
+                            <p><strong>Rice Lake, WI Location:</strong> • 715-234-8419</p>
+                            <p style="text-indent: 11.6em;">• 827 Hammond Ave, Rice Lake, WI</p>
+                            <p style="text-indent: 12.4em;">54868</p>
+                            <p><strong>Email:</strong> info@ahmcpa.com</p>
+                            <p><strong>Website Link:</strong><a href="https://www.ahmcpa.com/"</ahref></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Background Music for Game Section -->
+    <audio id="gameBackgroundMusic" loop preload="auto">
+        <source src="audio/game-music.mp3" type="audio/mpeg">
+        <source src="audio/game-music.ogg" type="audio/ogg">
+        <source src="audio/game-music.wav" type="audio/wav">
+    </audio>
+
+    <!-- Interactive Game Section -->
+    <section id="game" class="section game-section">
+        <div class="container">
+            <h2 class="section-title">Interactive Memory Game</h2>
+            <p class="section-subtitle">Test your memory skills with this UMD card matching game!</p>
+            
+            <!-- Game Music Control Button -->
+            <button class="game-music-control" id="gameMusicToggle" onclick="toggleGameMusic()" aria-label="Toggle game background music" title="Toggle Music">
+                <span id="gameMusicIcon">🔊</span>
+            </button>
+            
+            <div class="game-container">
+                <iframe src="game.html" class="game-iframe" title="Memory Card Game"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">I'd love to hear from you</p>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let's Connect</h3>
+                    <p>I'm always interested in new opportunities, collaborations, or just having a conversation about shared interests. Feel free to reach out!</p>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>sisco021@d.umn.edu</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Location</h4>
+                                <p>Duluth, Minnesota</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <i class="fas fa-university"></i>
+                            <div>
+                                <h4>University</h4>
+                                <p>University of Minnesota Duluth</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <form class="contact-form" onsubmit="handleFormSubmit(event)">
+                    <div class="form-group">
+                        <input type="text" name="name" class="form-input" placeholder=" " required>
+                        <label class="form-label">Your Name</label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="email" name="email" class="form-input" placeholder=" " required>
+                        <label class="form-label">Your Email</label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="text" name="subject" class="form-input" placeholder=" " required>
+                        <label class="form-label">Subject</label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <textarea name="message" class="form-input" rows="5" placeholder=" " required></textarea>
+                        <label class="form-label">Your Message</label>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i>
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Lauren Sisco</h3>
+                <p>Accounting & Finance student passionate about learning, creating, and making meaningful connections through diverse interests and experiences.</p>
+                
+            </div>
+            
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#hobbies">Hobbies</a></li>
+                    <li><a href="#discover">Discover</a></li>
+                    <li><a href="#resume">Resume</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#career">Career</a></li>
+                    <li><a href="#game">Game</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Education</h4>
+                <ul>
+                    <li>University of Minnesota Duluth
+                        <ul style="margin-left: 1.5rem; margin-top: 0.5rem; list-style-type: circle;">
+                            <li>Accounting & Finance Majors</li>
+                            <li>Economics Minor</li>
+                        </ul>
+                    </li>
+                    <li>Northwood Technical College</li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <ul>
+                    <li>Duluth, Minnesota</li>
+                    <li>sisco021@d.umn.edu</li>
+                    <li>University of Minnesota Duluth</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Lauren Sisco. All rights reserved. | Built with ❤️ and modern web technologies.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Theme Toggle
+        function toggleTheme() {
+            document.body.classList.toggle('dark-theme');
+            const themeIcon = document.querySelector('.theme-toggle i');
+            themeIcon.classList.toggle('fa-moon');
+            themeIcon.classList.toggle('fa-sun');
+        }
+
+        // Smooth Scrolling
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        // Form Handling
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            alert('Thank you for your message! I\'ll get back to you soon.');
+            event.target.reset();
+        }
+
+        // Scroll Animations
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.animate-on-scroll');
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('animated');
+                }
+            });
+        }
+
+        // Add scroll event listener
+        window.addEventListener('scroll', animateOnScroll);
+
+        // Initialize animations
+        document.addEventListener('DOMContentLoaded', () => {
+            animateOnScroll();
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.nav-container');
+            if (window.scrollY > 100) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+
+        // Add click handlers for navigation links
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href').substring(1);
+                scrollToSection(targetId);
+            });
+        });
+
+        // Add hover effects to cards
+        document.querySelectorAll('.hobby-card, .company-card, .timeline-content').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-10px)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Add typing effect to hero title
+        function typeWriter(element, text, speed = 100) {
+            let i = 0;
+            element.innerHTML = '';
+            
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+            
+            type();
+        }
+
+        // Initialize typing effect when page loads
+        window.addEventListener('load', () => {
+            const heroTitle = document.querySelector('.hero-title');
+            const originalText = heroTitle.innerHTML;
+            // Uncomment the line below to enable typing effect
+            // typeWriter(heroTitle, originalText, 50);
+        });
+
+        // Add keyboard support for scroll indicator
+        document.addEventListener('DOMContentLoaded', () => {
+            const scrollIndicator = document.querySelector('.scroll-indicator');
+            if (scrollIndicator) {
+                scrollIndicator.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        scrollToSection('about');
+                    }
+                });
+            }
+        });
+
+        // Game Background Music Functionality
+        let gameMusicPlaying = false;
+        let gameMusicUserEnabled = false;
+        let gameBackgroundMusic;
+        let gameMusicIcon;
+
+        function toggleGameMusic() {
+            if (!gameBackgroundMusic) {
+                gameBackgroundMusic = document.getElementById('gameBackgroundMusic');
+                gameMusicIcon = document.getElementById('gameMusicIcon');
+            }
+            
+            if (gameMusicPlaying) {
+                gameBackgroundMusic.pause();
+                gameMusicIcon.textContent = '🔇';
+                gameMusicPlaying = false;
+                gameMusicUserEnabled = false;
+            } else {
+                gameBackgroundMusic.play().catch(error => {
+                    console.log('Music play prevented:', error);
+                });
+                gameMusicIcon.textContent = '🔊';
+                gameMusicPlaying = true;
+                gameMusicUserEnabled = true;
+            }
+        }
+
+        // Intersection Observer for Game Section
+        function initGameMusicObserver() {
+            const gameSection = document.getElementById('game');
+            if (!gameSection) return;
+
+            if (!gameBackgroundMusic) {
+                gameBackgroundMusic = document.getElementById('gameBackgroundMusic');
+                gameMusicIcon = document.getElementById('gameMusicIcon');
+            }
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Game section is visible
+                        if (gameMusicUserEnabled && gameBackgroundMusic) {
+                            gameBackgroundMusic.play().catch(error => {
+                                // Autoplay may be blocked, but user can click button
+                                console.log('Auto-play prevented:', error);
+                            });
+                            gameMusicPlaying = true;
+                            if (gameMusicIcon) {
+                                gameMusicIcon.textContent = '🔊';
+                            }
+                        }
+                    } else {
+                        // Game section is not visible - pause music
+                        if (gameBackgroundMusic) {
+                            gameBackgroundMusic.pause();
+                            gameMusicPlaying = false;
+                        }
+                    }
+                });
+            }, {
+                threshold: 0.3 // Trigger when 30% of section is visible
+            });
+
+            observer.observe(gameSection);
+        }
+
+        // Initialize game music observer when DOM is ready
+        document.addEventListener('DOMContentLoaded', () => {
+            initGameMusicObserver();
+            
+            // Try to auto-start music when user first interacts with page
+            const startMusicOnInteraction = () => {
+                const gameSection = document.getElementById('game');
+                if (gameSection) {
+                    const rect = gameSection.getBoundingClientRect();
+                    const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+                    
+                    if (isVisible && !gameMusicUserEnabled) {
+                        // User hasn't disabled music, try to start it
+                        if (gameBackgroundMusic) {
+                            gameBackgroundMusic.play().then(() => {
+                                gameMusicPlaying = true;
+                                gameMusicUserEnabled = true;
+                                if (gameMusicIcon) {
+                                    gameMusicIcon.textContent = '🔊';
+                                }
+                            }).catch(() => {
+                                // Autoplay blocked - user needs to click button
+                            });
+                        }
+                    }
+                }
+                document.removeEventListener('click', startMusicOnInteraction);
+                document.removeEventListener('touchstart', startMusicOnInteraction);
+            };
+            
+            document.addEventListener('click', startMusicOnInteraction);
+            document.addEventListener('touchstart', startMusicOnInteraction);
+        });
+
+        // Welcome Slideshow functionality
+        let slideIndex = 1;
+        let slideInterval;
+
+        function showSlide(n) {
+            const slides = document.querySelectorAll('.slide');
+            const indicators = document.querySelectorAll('.indicator');
+            
+            if (n > slides.length) slideIndex = 1;
+            if (n < 1) slideIndex = slides.length;
+            
+            slides.forEach(slide => slide.classList.remove('active'));
+            indicators.forEach(indicator => indicator.classList.remove('active'));
+            
+            slides[slideIndex - 1].classList.add('active');
+            indicators[slideIndex - 1].classList.add('active');
+        }
+
+        function changeSlide(n) {
+            slideIndex += n;
+            showSlide(slideIndex);
+            resetSlideTimer();
+        }
+
+        function currentSlide(n) {
+            slideIndex = n;
+            showSlide(slideIndex);
+            resetSlideTimer();
+        }
+
+        function resetSlideTimer() {
+            clearInterval(slideInterval);
+            slideInterval = setInterval(() => {
+                slideIndex++;
+                showSlide(slideIndex);
+            }, 5000); // Change slide every 5 seconds
+        }
+
+        // Initialize slideshow
+        document.addEventListener('DOMContentLoaded', () => {
+            showSlide(slideIndex);
+            slideInterval = setInterval(() => {
+                slideIndex++;
+                showSlide(slideIndex);
+            }, 5000);
+        });
+    </script>
+</body>
+</html>
